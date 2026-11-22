@@ -9,7 +9,7 @@
     --bg: #f6f5fa;
     --card: #ffffff;
     --text: #1f2430;
-    --muted: #646b7c;
+    --muted: #4a5162;
     --border: #e3e1ec;
     --accent: #6d55a3;
     --accent-dark: #543e85;
@@ -41,7 +41,7 @@
     --neu-bg: #f1f2f6;
     --neu-txt: #4a5568;
 
-    --danger: #d64550;
+    --danger: #b91c1c;
     --success: #2f855a;
     --radius: 12px;
     --shadow: 0 2px 10px rgba(31, 36, 48, 0.06);
@@ -627,6 +627,431 @@
 
   .empty-state { text-align: center; padding: 32px 20px; color: var(--muted); }
 
+
+  .text-success { color: #046c4e !important; }
+  .text-danger  { color: #b91c1c !important; }
+
+  /* Indicador de origen de la interfaz */
+  .origin-pill {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.28);
+    color: #f5f3ff;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: default;
+  }
+  .origin-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #34d399;
+    box-shadow: 0 0 0 2px rgba(52,211,153,0.28);
+  }
+  .origin-dot.offline {
+    background: #fbbf24;
+    box-shadow: 0 0 0 2px rgba(251,191,36,0.28);
+  }
+
+  /* Corrección de contraste en encabezados claros de tabla de dimensiones de curso */
+  #courseDimTable thead th {
+    border-right: 1px solid #cbd5e1;
+  }
+  #courseDimTable thead th.th-pre-head  { background: #e0e7ff !important; color: #1e1b4b !important; border-bottom: 1px solid #a5b4fc; }
+  #courseDimTable thead th.th-post-head { background: #d1fae5 !important; color: #064e3b !important; border-bottom: 1px solid #6ee7b7; }
+  #courseDimTable thead th.th-mob-head  { background: #fef3c7 !important; color: #78350f !important; border-bottom: 1px solid #fcd34d; }
+  #courseDimTable thead th.th-pre-sub   { background: #eef2ff !important; color: #1e1b4b !important; font-size: 11.5px; }
+  #courseDimTable thead th.th-post-sub  { background: #ecfdf5 !important; color: #064e3b !important; font-size: 11.5px; }
+  #courseDimTable thead th.th-mob-sub   { background: #fffbeb !important; color: #78350f !important; font-size: 11.5px; }
+
+  /* ===================================================================== */
+  /* INFORME COMPLETO AF-5 (DISEÑO EDITORIAL PROFESIONAL + EXPORTAR PDF)   */
+  /* ===================================================================== */
+  .report-modal-shell {
+    max-width: 960px !important;
+    background: #eef0f6 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    max-height: 94vh;
+  }
+  .report-toolbar {
+    background: #2d2640;
+    color: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .report-toolbar h2 { margin: 0; font-size: 16.5px; font-weight: 800; color: #ffffff; }
+  .report-toolbar .sub { font-size: 12px; color: #d6d0e8; margin-top: 2px; }
+  .report-toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .report-scroll-area {
+    overflow-y: auto;
+    padding: 22px;
+    flex: 1;
+  }
+  .report-paper {
+    background: #ffffff;
+    color: #1f2430;
+    max-width: 820px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(31, 36, 48, 0.12);
+    border: 1px solid #d9dce6;
+    overflow: hidden;
+  }
+  .rpt-header {
+    background: linear-gradient(135deg, #2d2640 0%, #4b3d73 100%);
+    color: #ffffff;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 4px solid #b79ced;
+  }
+  .rpt-header-left { display: flex; align-items: center; gap: 14px; }
+  .rpt-logo {
+    width: 48px; height: 48px; border-radius: 11px;
+    background: linear-gradient(135deg, #c6b1ee, #f5b7d0);
+    color: #2d2640; font-weight: 900; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .rpt-title { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: 0.2px; color: #ffffff; }
+  .rpt-subtitle { margin: 3px 0 0; font-size: 12px; color: #e2dcf2; }
+  .rpt-meta-right { text-align: right; font-size: 11.5px; color: #e2dcf2; line-height: 1.5; }
+  .rpt-meta-right strong { color: #ffffff; }
+
+  .rpt-body { padding: 22px 28px 26px; }
+  .rpt-section { margin-bottom: 20px; break-inside: avoid; }
+  .rpt-section-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #2d2640;
+    border-bottom: 2px solid #e6e2f2;
+    padding-bottom: 5px;
+    margin: 0 0 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rpt-section-title span.tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #543e85;
+    background: #f0ebf9;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .rpt-id-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 14px;
+    background: #faf9fd;
+    border: 1px solid #e3e1ec;
+    border-radius: 9px;
+    padding: 12px 15px;
+  }
+  @media (max-width: 680px) { .rpt-id-grid { grid-template-columns: 1fr 1fr; } }
+  .rpt-id-item .lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #5b6275; letter-spacing: 0.4px; }
+  .rpt-id-item .val { font-size: 13px; font-weight: 700; color: #1f2430; margin-top: 2px; }
+
+  .rpt-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 680px) { .rpt-kpi-grid { grid-template-columns: 1fr 1fr; } }
+  .rpt-kpi {
+    border: 1px solid #e3e1ec;
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #ffffff;
+  }
+  .rpt-kpi .k-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #5b6275; }
+  .rpt-kpi .k-val { font-size: 16px; font-weight: 800; color: #1f2430; margin: 4px 0 2px; line-height: 1.2; }
+  .rpt-kpi .k-sub { font-size: 11px; color: #4a5162; }
+
+  .rpt-charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .rpt-charts-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 720px) { .rpt-charts-row { grid-template-columns: 1fr; } }
+  .rpt-chart-box {
+    border: 1px solid #e3e1ec;
+    border-radius: 9px;
+    padding: 8px;
+    background: #ffffff;
+    text-align: center;
+  }
+  .rpt-chart-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
+
+  .rpt-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 11px;
+    border: 1px solid #d5d1e2;
+  }
+  .rpt-table th {
+    background: #2d2640;
+    color: #ffffff;
+    padding: 6px 4px;
+    font-weight: 700;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.25;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .rpt-table th.left { text-align: left; padding-left: 8px; }
+  .rpt-table td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #e8e5f0;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    color: #1f2430;
+  }
+  .rpt-table td.left { text-align: left; font-weight: 600; padding-left: 8px; }
+  .rpt-table .qual-badge,
+  .rpt-table .mobility-badge,
+  .rpt-table .delta-badge,
+  .rpt-table .pc-chip {
+    font-size: 10px;
+    padding: 2px 5px;
+    white-space: nowrap;
+  }
+  .rpt-table tr:nth-child(even) td { background: #faf9fd; }
+  .rpt-table tr.rpt-summary-row td {
+    background: #eceaf4 !important;
+    font-weight: 800;
+    border-top: 2px solid #2d2640;
+    color: #1f2430;
+  }
+
+  .rpt-interp-list { display: flex; flex-direction: column; gap: 8px; }
+  .rpt-interp-item {
+    border: 1px solid #e5e2ef;
+    border-left: 4px solid #6d55a3;
+    border-radius: 7px;
+    padding: 9px 12px;
+    background: #fcfbfe;
+    break-inside: avoid;
+  }
+  .rpt-interp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .rpt-interp-head strong { font-size: 12.5px; color: #262038; }
+  .rpt-interp-text { margin: 0; font-size: 12px; color: #333845; line-height: 1.5; }
+
+  .rpt-reco-box {
+    background: #f4fbf7;
+    border: 1px solid #b7e4cc;
+    border-left: 4px solid #2f855a;
+    border-radius: 8px;
+    padding: 12px 15px;
+    break-inside: avoid;
+  }
+  .rpt-reco-box ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    font-size: 12px;
+    color: #1f2430;
+    line-height: 1.55;
+  }
+  .rpt-reco-box li { margin-bottom: 4px; }
+
+  .rpt-notes-edit {
+    width: 100%;
+    min-height: 70px;
+    padding: 10px 12px;
+    border: 1px dashed #b9b0d8;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12.5px;
+    color: #1f2430;
+    background: #faf9fd;
+    resize: vertical;
+  }
+  .rpt-notes-print {
+    display: none;
+    white-space: pre-wrap;
+    font-size: 12px;
+    color: #1f2430;
+    background: #faf9fd;
+    border: 1px solid #e3e1ec;
+    border-radius: 8px;
+    padding: 10px 12px;
+    line-height: 1.5;
+  }
+
+  .rpt-sign-row {
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid #e3e1ec;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    break-inside: avoid;
+  }
+  .rpt-sign-box {
+    text-align: center;
+    min-width: 240px;
+  }
+  .rpt-sign-line {
+    border-top: 1.5px solid #2d2640;
+    margin-bottom: 5px;
+  }
+  .rpt-sign-name { font-size: 12.5px; font-weight: 800; color: #262038; }
+  .rpt-sign-role { font-size: 11px; color: #4a5162; }
+  .rpt-legal-note {
+    font-size: 10.5px;
+    color: #5b6275;
+    max-width: 440px;
+    line-height: 1.45;
+  }
+  .clean-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+  }
+  .clean-tab-btn {
+    border: 1px solid var(--border);
+    background: #f8f7fc;
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .clean-tab-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+  }
+  .clean-preview-box {
+    background: #fffbeb;
+    border: 1px solid #f59e0b;
+    color: #78350f;
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 12.5px;
+    margin: 12px 0;
+  }
+  .clean-preview-box.safe {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #334155;
+  }
+
+  @page {
+    size: letter portrait;
+    margin: 10mm 12mm;
+  }
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body.printing-quick-report header,
+    body.printing-quick-report .nav-bar,
+    body.printing-quick-report main,
+    body.printing-quick-report footer,
+    body.printing-quick-report .toast,
+    body.printing-quick-report .modal-backdrop:not(#quickReportModal) {
+      display: none !important;
+    }
+    body.printing-quick-report {
+      background: #ffffff !important;
+    }
+    body.printing-quick-report #quickReportModal {
+      display: block !important;
+      position: static !important;
+      background: #ffffff !important;
+      padding: 0 !important;
+    }
+    body.printing-quick-report #quickReportModal .report-modal-shell {
+      box-shadow: none !important;
+      max-width: 100% !important;
+      max-height: none !important;
+      overflow: visible !important;
+      background: #ffffff !important;
+      display: block !important;
+    }
+    body.printing-quick-report #quickReportModal .report-toolbar {
+      display: none !important;
+    }
+    body.printing-quick-report #quickReportModal .report-scroll-area {
+      overflow: visible !important;
+      padding: 0 !important;
+    }
+    body.printing-quick-report #quickReportModal .report-paper {
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      max-width: 100% !important;
+    }
+    body.printing-quick-report .rpt-body {
+      padding: 16px 12px 20px !important;
+    }
+    body.printing-quick-report .rpt-table {
+      font-size: 10px !important;
+    }
+    body.printing-quick-report .rpt-table th,
+    body.printing-quick-report .rpt-table td {
+      padding: 5px 3px !important;
+    }
+    body.printing-quick-report .rpt-table .qual-badge,
+    body.printing-quick-report .rpt-table .mobility-badge,
+    body.printing-quick-report .rpt-table .delta-badge,
+    body.printing-quick-report .rpt-table .pc-chip {
+      font-size: 9.5px !important;
+      padding: 1.5px 4px !important;
+    }
+    body.printing-quick-report .rpt-notes-edit {
+      display: none !important;
+    }
+    body.printing-quick-report .rpt-notes-print.has-content {
+      display: block !important;
+    }
+    body.printing-quick-report .rpt-notes-section.empty-notes {
+      display: none !important;
+    }
+  }
+
   @media print {
     header, .nav-bar, .subnav-card, .no-print { display: none !important; }
     body { background: #fff; }
@@ -651,6 +1076,10 @@
       </div>
     </div>
     <div class="header-controls">
+      <div class="origin-pill" id="uiOriginBadge" title="Detectando origen de la interfaz...">
+        <span class="origin-dot" id="uiOriginDot"></span>
+        <span id="uiOriginText">Interfaz: Detectando...</span>
+      </div>
       <div class="counter-pill">
         <span>Pre: <strong id="hdrPre">0</strong>/50</span>
         <span>|</span>
@@ -681,7 +1110,7 @@
         3. Gráficos y Tablas Comparativas <span class="tab-pill" id="tabPillComp">0</span>
       </button>
       <button type="button" class="tab-btn" id="navBtn-cursos" onclick="switchTab('cursos')">
-        4. Perfiles por Curso <span class="tab-pill" id="tabPillCursos" style="background:#d97706;">0</span>
+        4. Perfiles por Curso <span class="tab-pill" id="tabPillCursos" style="background:#b45309; color:#ffffff;">0</span>
       </button>
     </div>
     <div class="data-actions">
@@ -691,6 +1120,7 @@
       <button type="button" class="btn btn-sm" onclick="exportJSON()">Guardar Respaldo</button>
       <button type="button" class="btn btn-sm" onclick="document.getElementById('fileImport').click()">Cargar Respaldo</button>
       <input type="file" id="fileImport" accept=".json" style="display:none" onchange="importJSON(event)">
+      <button type="button" class="btn btn-sm btn-danger" onclick="openSelectiveCleanModal()" title="Eliminar solo un curso o un estudiante específico">🧹 Limpieza Selectiva</button>
       <button type="button" class="btn btn-sm" onclick="window.print()">Imprimir / PDF</button>
     </div>
   </div>
@@ -708,8 +1138,8 @@
         <p>Registra, revisa y grafica de manera individual los resultados iniciales de hasta 50 estudiantes.</p>
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;" class="no-print">
-        <button type="button" class="btn btn-sm btn-primary" onclick="triggerGoogleFormsImport('pre')" style="font-weight:700; background:#433763; border-color:#433763; color:#fff;">📥 Importar CSV Pre-Test (Google Forms)</button>
-        <input type="file" id="pre_fileGoogleForms" accept=".csv,.txt,.tsv" style="display:none;" onchange="handleGoogleFormsFile(event, 'pre')">
+        <button type="button" class="btn btn-sm btn-primary" onclick="triggerGoogleFormsImport('pre')" style="font-weight:700; background:#433763; border-color:#433763; color:#fff;">📥 Importar Pre-Test (Excel .xlsx / CSV)</button>
+        <input type="file" id="pre_fileGoogleForms" accept=".xlsx,.csv,.txt,.tsv" style="display:none;" onchange="handleGoogleFormsFile(event, 'pre')">
         <button type="button" class="btn btn-sm" onclick="exportPhaseCSV('pre')">Exportar Pre-Test (.csv)</button>
         <button type="button" class="btn btn-sm btn-danger" onclick="clearPhase('pre')">Vaciar Pre-Test</button>
       </div>
@@ -1037,8 +1467,8 @@
         <p>Registra, vincula con el Pre-Test, revisa y grafica de manera individual los resultados finales de hasta 50 estudiantes.</p>
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;" class="no-print">
-        <button type="button" class="btn btn-sm btn-primary" onclick="triggerGoogleFormsImport('post')" style="font-weight:700; background:#236343; border-color:#236343; color:#fff;">📥 Importar CSV Post-Test (Google Forms)</button>
-        <input type="file" id="post_fileGoogleForms" accept=".csv,.txt,.tsv" style="display:none;" onchange="handleGoogleFormsFile(event, 'post')">
+        <button type="button" class="btn btn-sm btn-primary" onclick="triggerGoogleFormsImport('post')" style="font-weight:700; background:#236343; border-color:#236343; color:#fff;">📥 Importar Post-Test (Excel .xlsx / CSV)</button>
+        <input type="file" id="post_fileGoogleForms" accept=".xlsx,.csv,.txt,.tsv" style="display:none;" onchange="handleGoogleFormsFile(event, 'post')">
         <button type="button" class="btn btn-sm" onclick="exportPhaseCSV('post')">Exportar Post-Test (.csv)</button>
         <button type="button" class="btn btn-sm btn-danger" onclick="clearPhase('post')">Vaciar Post-Test</button>
       </div>
@@ -1764,7 +2194,8 @@
       <p>Baremación colectiva, medias de cada dimensión con clasificación cualitativa (Alto/Medio/Bajo), distribución por sexo y movilidad neta (Pre vs Post) por curso y nivel escolar.</p>
     </div>
     <div style="display:flex; gap:8px; flex-wrap:wrap;" class="no-print">
-      <button type="button" class="btn btn-sm btn-primary" onclick="openCourseModal()" style="font-weight:700; background:#d97706; border-color:#d97706; color:#fff;">➕ Nuevo Curso</button>
+      <button type="button" class="btn btn-sm btn-primary" onclick="openCourseQuickReport(activeCourseName)" style="font-weight:700; background:#2d2640; border-color:#2d2640; color:#fff;">📄 Informe Completo del Curso (PDF)</button>
+      <button type="button" class="btn btn-sm btn-primary" onclick="openCourseModal()" style="font-weight:700; background:#b45309; border-color:#b45309; color:#fff;">➕ Nuevo Curso</button>
       <button type="button" class="btn btn-sm btn-success" onclick="exportCourseProfilesCSV()">📊 Exportar Informe Cursos (.csv)</button>
       <button type="button" class="btn btn-sm" onclick="window.print()">🖨️ Imprimir Perfil</button>
     </div>
@@ -1824,7 +2255,8 @@
             <div style="font-size:11px; text-transform:uppercase; font-weight:700; color:var(--muted);">Diagnóstico de Movilidad</div>
             <div id="courseDetailMobilityBadge" style="margin-top:4px;">—</div>
           </div>
-          <div style="display:flex; gap:6px; margin-top:4px;" class="no-print">
+          <div style="display:flex; gap:6px; margin-top:4px; flex-wrap:wrap; justify-content:flex-end;" class="no-print">
+            <button type="button" class="btn btn-sm btn-primary" onclick="openCourseQuickReport(activeCourseName)">📄 Informe Completo (PDF)</button>
             <button type="button" class="btn btn-sm" onclick="openCourseModal(activeCourseName)">✏️ Editar</button>
             <button type="button" class="btn btn-sm btn-danger" onclick="deleteActiveCourse()" title="Eliminar este curso">🗑️ Eliminar</button>
           </div>
@@ -1875,20 +2307,20 @@
           <thead>
             <tr>
               <th rowspan="2" class="left" style="vertical-align:middle;">Dimensión AF-5</th>
-              <th colspan="3" style="background:#eef0fb; border-bottom:1px solid #c5cae9;">Pre-Test (Inicial)</th>
-              <th colspan="3" style="background:#ebf8f1; border-bottom:1px solid #a7f3d0;">Post-Test (Final)</th>
-              <th colspan="3" style="background:#fef3c7; border-bottom:1px solid #fde68a;">Movilidad Neta (Δ Post - Pre)</th>
+              <th colspan="3" class="th-pre-head">Pre-Test (Inicial)</th>
+              <th colspan="3" class="th-post-head">Post-Test (Final)</th>
+              <th colspan="3" class="th-mob-head">Movilidad Neta (Δ Post - Pre)</th>
             </tr>
             <tr>
-              <th style="background:#f8f9fe; font-size:11.5px;">PD Media (0–9.9)</th>
-              <th style="background:#f8f9fe; font-size:11.5px;">Pc Medio (1–99)</th>
-              <th style="background:#f8f9fe; font-size:11.5px;">Nivel Cualitativo</th>
-              <th style="background:#f0fdf4; font-size:11.5px;">PD Media (0–9.9)</th>
-              <th style="background:#f0fdf4; font-size:11.5px;">Pc Medio (1–99)</th>
-              <th style="background:#f0fdf4; font-size:11.5px;">Nivel Cualitativo</th>
-              <th style="background:#fffbeb; font-size:11.5px;">Δ PD</th>
-              <th style="background:#fffbeb; font-size:11.5px;">Δ Pc</th>
-              <th style="background:#fffbeb; font-size:11.5px;">Evolución del Curso</th>
+              <th class="th-pre-sub">PD Media (0–9.9)</th>
+              <th class="th-pre-sub">Pc Medio (1–99)</th>
+              <th class="th-pre-sub">Nivel Cualitativo</th>
+              <th class="th-post-sub">PD Media (0–9.9)</th>
+              <th class="th-post-sub">Pc Medio (1–99)</th>
+              <th class="th-post-sub">Nivel Cualitativo</th>
+              <th class="th-mob-sub">Δ PD</th>
+              <th class="th-mob-sub">Δ Pc</th>
+              <th class="th-mob-sub">Evolución del Curso</th>
             </tr>
           </thead>
           <tbody id="courseDimTableBody">
@@ -2133,7 +2565,8 @@
         <tbody id="modalTableBody"></tbody>
       </table>
     </div>
-    <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px;">
+    <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px; flex-wrap:wrap;">
+      <button type="button" class="btn btn-sm btn-success" onclick="openIndividualQuickReport(currentModalStudentId)">📄 Informe Completo (PDF)</button>
       <button type="button" class="btn btn-sm" onclick="downloadIndividualChart()">Descargar Gráfico Individual (PNG)</button>
       <button type="button" class="btn btn-sm btn-primary" onclick="closeProfileModal()">Cerrar</button>
     </div>
@@ -2157,8 +2590,8 @@
 
     <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:14px; background:#f7f6fc; padding:12px 14px; border-radius:10px; border:1px solid var(--border);">
       <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
-        <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('rosterFileInput').click()" style="font-weight:700;">📁 Cargar Nómina (CSV / Excel)</button>
-        <input type="file" id="rosterFileInput" accept=".csv,.txt,.tsv" style="display:none;" onchange="handleRosterFileUpload(event)">
+        <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('rosterFileInput').click()" style="font-weight:700;">📁 Cargar Nómina (Excel .xlsx / CSV)</button>
+        <input type="file" id="rosterFileInput" accept=".xlsx,.csv,.txt,.tsv" style="display:none;" onchange="handleRosterFileUpload(event)">
         <button type="button" class="btn btn-sm" onclick="downloadRosterTemplate()">📥 Descargar Plantilla CSV</button>
         <button type="button" class="btn btn-sm" onclick="loadSampleRoster()">Cargar 30 Estudiantes de Ejemplo</button>
       </div>
@@ -2219,7 +2652,7 @@
     </div>
 
     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:8px;">
-      <span style="font-size:11.5px; color:var(--muted);">Formatos admitidos: CSV separado por comas o punto y coma. Columnas: <code>N° Lista</code>, <code>Nombre completo</code>, <code>Curso</code>, <code>Sexo</code>.</span>
+      <span style="font-size:11.5px; color:var(--muted);">Formatos admitidos: Excel (<code>.xlsx</code>, hoja activa) o CSV (comas, punto y coma o tab). Columnas: <code>N° Lista</code>, <code>Nombre completo</code>, <code>Curso</code>, <code>Sexo</code>.</span>
       <button type="button" class="btn btn-primary btn-sm" onclick="closeRosterModal()">Cerrar Nómina</button>
     </div>
   </div>
@@ -2287,6 +2720,104 @@
 
     <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
       <button type="button" class="btn btn-primary" onclick="closeGoogleImportModal()">Ver Resultados en la Planilla</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- =================================================================== -->
+<!-- MODAL INFORME COMPLETO AF-5 (INDIVIDUAL Y POR CURSO — EXPORTAR PDF) -->
+<!-- =================================================================== -->
+<div class="modal-backdrop" id="quickReportModal" onclick="if(event.target===this) closeQuickReportModal()">
+  <div class="modal report-modal-shell">
+    <div class="report-toolbar no-print">
+      <div>
+        <h2 id="quickReportTitle">📄 Informe Psicoeducativo Completo — AF-5</h2>
+        <div id="quickReportSub" class="sub">Vista previa de documento listo para descargar en PDF</div>
+      </div>
+      <div class="report-toolbar-actions">
+        <button type="button" class="btn btn-sm btn-success" onclick="downloadFullReportPDF()" style="font-weight:700;">📄 Descargar PDF</button>
+        <button type="button" class="btn btn-sm" onclick="downloadFullReportHTML()" title="Guardar como documento HTML autónomo">🌐 Guardar HTML</button>
+        <button type="button" class="btn btn-sm" onclick="copyQuickReport()" title="Copiar síntesis en texto plano">📋 Copiar Texto</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="closeQuickReportModal()">✕ Cerrar</button>
+      </div>
+    </div>
+    <div class="report-scroll-area">
+      <div id="quickReportBody" class="report-paper"></div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- MODAL LIMPIEZA SELECTIVA (POR CURSO O POR ESTUDIANTE)               -->
+<!-- =================================================================== -->
+<div class="modal-backdrop" id="selectiveCleanModal" onclick="if(event.target===this) closeSelectiveCleanModal()">
+  <div class="modal" style="max-width: 620px;">
+    <div class="modal-header">
+      <div>
+        <h2 style="margin:0; font-size:18px; color:var(--danger);">🧹 Limpieza Selectiva de Registros</h2>
+        <div style="font-size:12.5px; color:var(--muted); margin-top:3px;">Elimina datos de un curso específico o de un estudiante concreto sin afectar al resto.</div>
+      </div>
+      <button type="button" class="modal-close" onclick="closeSelectiveCleanModal()">&times;</button>
+    </div>
+
+    <div class="clean-tabs">
+      <button type="button" class="clean-tab-btn active" id="cleanTabBtn_course" onclick="switchCleanTab('course')">Por Curso</button>
+      <button type="button" class="clean-tab-btn" id="cleanTabBtn_student" onclick="switchCleanTab('student')">Por Estudiante</button>
+    </div>
+
+    <!-- PANEL LIMPIEZA POR CURSO -->
+    <div id="cleanPanel_course">
+      <div class="field" style="margin-bottom:12px;">
+        <label for="cleanCourseSelect">Seleccionar curso a limpiar</label>
+        <select id="cleanCourseSelect" onchange="updateSelectiveCleanPreview()"></select>
+      </div>
+      <div class="field" style="margin-bottom:12px;">
+        <label for="cleanCourseScope">¿Qué registros deseas eliminar en este curso?</label>
+        <select id="cleanCourseScope" onchange="updateSelectiveCleanPreview()">
+          <option value="pre">Solo evaluaciones de Pre-Test (conserva Post-Test)</option>
+          <option value="post">Solo evaluaciones de Post-Test (conserva Pre-Test)</option>
+          <option value="both">Pre-Test y Post-Test (elimina estudiantes de este curso)</option>
+        </select>
+      </div>
+      <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text); cursor:pointer; margin-bottom:10px;">
+        <input type="checkbox" id="cleanCourseIncludeRoster" onchange="updateSelectiveCleanPreview()">
+        También eliminar de la Nómina Maestra los estudiantes de este curso
+      </label>
+      <div id="cleanCoursePreview" class="clean-preview-box safe">Selecciona un curso para ver el detalle.</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px;">
+        <button type="button" class="btn btn-sm" onclick="closeSelectiveCleanModal()">Cancelar</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="executeCleanByCourse()" style="font-weight:700;">🗑️ Limpiar curso seleccionado</button>
+      </div>
+    </div>
+
+    <!-- PANEL LIMPIEZA POR ESTUDIANTE -->
+    <div id="cleanPanel_student" style="display:none;">
+      <div class="field" style="margin-bottom:10px;">
+        <label for="cleanStudentSearch">Filtrar estudiante (nombre, curso o N° lista)</label>
+        <input type="text" id="cleanStudentSearch" placeholder="Escribe para filtrar..." oninput="populateCleanStudentSelect()">
+      </div>
+      <div class="field" style="margin-bottom:12px;">
+        <label for="cleanStudentSelect">Seleccionar estudiante</label>
+        <select id="cleanStudentSelect" onchange="updateSelectiveCleanPreview()"></select>
+      </div>
+      <div class="field" style="margin-bottom:12px;">
+        <label for="cleanStudentScope">¿Qué registros deseas eliminar de este estudiante?</label>
+        <select id="cleanStudentScope" onchange="updateSelectiveCleanPreview()">
+          <option value="all">Eliminar estudiante completo (Pre-Test y Post-Test)</option>
+          <option value="pre">Solo su registro de Pre-Test</option>
+          <option value="post">Solo su registro de Post-Test</option>
+        </select>
+      </div>
+      <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text); cursor:pointer; margin-bottom:10px;">
+        <input type="checkbox" id="cleanStudentIncludeRoster" onchange="updateSelectiveCleanPreview()">
+        También quitar este estudiante de la Nómina Maestra (si coincide N° de Lista)
+      </label>
+      <div id="cleanStudentPreview" class="clean-preview-box safe">Selecciona un estudiante para ver el detalle.</div>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px;">
+        <button type="button" class="btn btn-sm" onclick="closeSelectiveCleanModal()">Cancelar</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="executeCleanByStudent()" style="font-weight:700;">🗑️ Eliminar registro del estudiante</button>
+      </div>
     </div>
   </div>
 </div>
@@ -5513,7 +6044,7 @@ function calcCourseProfileStats(courseName, sampleMode = "all") {
 
     dimDetails[d.key] = {
       short: d.short,
-      fullName: d.name,
+      fullName: d.label,
       prePd, prePc,
       preQual: getQualitativeLevelInfo(prePc),
       postPd, postPc,
@@ -5831,7 +6362,7 @@ function renderCourseDetailView() {
     const deltaPcStr = dim.deltaPc !== null ? fmtSigned(dim.deltaPc, 1) : "—";
 
     tr.innerHTML = `
-      <td class="left"><strong>${d.name}</strong> (${d.short})</td>
+      <td class="left"><strong>${d.label}</strong> (${d.short})</td>
       <td>${prePdStr}</td>
       <td><strong>${prePcStr}</strong></td>
       <td>${preQualBadge}</td>
@@ -7397,6 +7928,1322 @@ window.downloadCSVFile = function(lines, filename) {
   a.click();
 };
 
+
+
+// =========================================================================
+// EXTENSIONES v3: LECTURA NATIVA .XLSX, INFORME RAPIDO, ORIGEN UI Y LIMPIEZA SELECTIVA
+// =========================================================================
+
+// 1. LECTOR NATIVO DE EXCEL (.xlsx) SIN DEPENDENCIAS EXTERNAS (100% OFFLINE)
+function colLettersToIndex(letters) {
+  let idx = 0;
+  for (let i = 0; i < letters.length; i++) {
+    idx = idx * 26 + (letters.charCodeAt(i) - 64);
+  }
+  return idx - 1;
+}
+
+async function inflateRawBytes(bytes) {
+  if (typeof DecompressionStream === "undefined") {
+    throw new Error("Tu navegador no soporta DecompressionStream para descomprimir archivos .xlsx.");
+  }
+  const ds = new DecompressionStream("deflate-raw");
+  const writer = ds.writable.getWriter();
+  writer.write(bytes);
+  writer.close();
+  const ab = await new Response(ds.readable).arrayBuffer();
+  return new Uint8Array(ab);
+}
+
+async function unzipXLSXEntries(arrayBuffer) {
+  const bytes = new Uint8Array(arrayBuffer);
+  const view = new DataView(arrayBuffer);
+
+  let eocdOffset = -1;
+  const minOffset = Math.max(0, bytes.length - 65557);
+  for (let i = bytes.length - 22; i >= minOffset; i--) {
+    if (view.getUint32(i, true) === 0x06054b50) {
+      eocdOffset = i;
+      break;
+    }
+  }
+  if (eocdOffset === -1) {
+    throw new Error("El archivo .xlsx no es un paquete ZIP válido o está dañado.");
+  }
+
+  const cdEntries = view.getUint16(eocdOffset + 10, true);
+  const cdOffset = view.getUint32(eocdOffset + 16, true);
+  const dec = new TextDecoder("utf-8");
+  const entries = {};
+
+  let ptr = cdOffset;
+  for (let e = 0; e < cdEntries; e++) {
+    if (view.getUint32(ptr, true) !== 0x02014b50) break;
+    const method = view.getUint16(ptr + 10, true);
+    const compSize = view.getUint32(ptr + 20, true);
+    const nameLen = view.getUint16(ptr + 28, true);
+    const extraLen = view.getUint16(ptr + 30, true);
+    const commentLen = view.getUint16(ptr + 32, true);
+    const localHeaderOffset = view.getUint32(ptr + 42, true);
+
+    const name = dec.decode(bytes.subarray(ptr + 46, ptr + 46 + nameLen));
+    ptr += 46 + nameLen + extraLen + commentLen;
+
+    if (!name.startsWith("xl/")) continue;
+
+    const lhNameLen = view.getUint16(localHeaderOffset + 26, true);
+    const lhExtraLen = view.getUint16(localHeaderOffset + 28, true);
+    const dataStart = localHeaderOffset + 30 + lhNameLen + lhExtraLen;
+    const compData = bytes.subarray(dataStart, dataStart + compSize);
+
+    let outBytes;
+    if (method === 0) {
+      outBytes = compData;
+    } else if (method === 8) {
+      outBytes = await inflateRawBytes(compData);
+    } else {
+      continue;
+    }
+    entries[name] = dec.decode(outBytes);
+  }
+  return entries;
+}
+
+async function parseXLSXArrayBuffer(arrayBuffer) {
+  const entries = await unzipXLSXEntries(arrayBuffer);
+  const parser = new DOMParser();
+
+  const sharedStrings = [];
+  if (entries["xl/sharedStrings.xml"]) {
+    const ssDoc = parser.parseFromString(entries["xl/sharedStrings.xml"], "application/xml");
+    const siNodes = ssDoc.getElementsByTagName("si");
+    for (let i = 0; i < siNodes.length; i++) {
+      const tNodes = siNodes[i].getElementsByTagName("t");
+      let txt = "";
+      for (let j = 0; j < tNodes.length; j++) {
+        txt += tNodes[j].textContent || "";
+      }
+      sharedStrings.push(txt);
+    }
+  }
+
+  let targetSheetPath = "xl/worksheets/sheet1.xml";
+  if (entries["xl/workbook.xml"] && entries["xl/_rels/workbook.xml.rels"]) {
+    const wbDoc = parser.parseFromString(entries["xl/workbook.xml"], "application/xml");
+    const relDoc = parser.parseFromString(entries["xl/_rels/workbook.xml.rels"], "application/xml");
+
+    let activeTabIdx = 0;
+    const wbView = wbDoc.getElementsByTagName("workbookView")[0];
+    if (wbView && wbView.getAttribute("activeTab")) {
+      activeTabIdx = parseInt(wbView.getAttribute("activeTab"), 10) || 0;
+    }
+
+    const sheets = wbDoc.getElementsByTagName("sheet");
+    const chosenSheet = sheets[activeTabIdx] || sheets[0];
+    if (chosenSheet) {
+      const rId = chosenSheet.getAttribute("r:id") || chosenSheet.getAttribute("id");
+      const rels = relDoc.getElementsByTagName("Relationship");
+      for (let i = 0; i < rels.length; i++) {
+        if (rels[i].getAttribute("Id") === rId) {
+          let tgt = rels[i].getAttribute("Target") || "";
+          tgt = tgt.replace(/^\/+/, "");
+          targetSheetPath = tgt.startsWith("xl/") ? tgt : ("xl/" + tgt);
+          break;
+        }
+      }
+    }
+  }
+
+  if (!entries[targetSheetPath]) {
+    const anySheet = Object.keys(entries).find(k => /^xl\/worksheets\/sheet\d+\.xml$/i.test(k));
+    if (!anySheet) throw new Error("No se encontró ninguna hoja de cálculo en el archivo .xlsx.");
+    targetSheetPath = anySheet;
+  }
+
+  const sheetDoc = parser.parseFromString(entries[targetSheetPath], "application/xml");
+  const rowNodes = sheetDoc.getElementsByTagName("row");
+  const rows = [];
+
+  for (let r = 0; r < rowNodes.length; r++) {
+    const cNodes = rowNodes[r].getElementsByTagName("c");
+    const rowArr = [];
+    let fallbackCol = 0;
+
+    for (let c = 0; c < cNodes.length; c++) {
+      const cell = cNodes[c];
+      const ref = cell.getAttribute("r") || "";
+      const mCol = ref.match(/^([A-Z]+)/i);
+      const colIdx = mCol ? colLettersToIndex(mCol[1].toUpperCase()) : fallbackCol;
+      fallbackCol = colIdx + 1;
+
+      const type = cell.getAttribute("t") || "";
+      let val = "";
+      if (type === "s") {
+        const vNode = cell.getElementsByTagName("v")[0];
+        const idx = vNode ? parseInt(vNode.textContent, 10) : -1;
+        val = (idx >= 0 && idx < sharedStrings.length) ? sharedStrings[idx] : "";
+      } else if (type === "inlineStr") {
+        const tNodes = cell.getElementsByTagName("t");
+        for (let k = 0; k < tNodes.length; k++) val += tNodes[k].textContent || "";
+      } else if (type === "b") {
+        const vNode = cell.getElementsByTagName("v")[0];
+        val = (vNode && vNode.textContent === "1") ? "TRUE" : "FALSE";
+      } else {
+        const vNode = cell.getElementsByTagName("v")[0];
+        val = vNode ? (vNode.textContent || "") : "";
+      }
+
+      while (rowArr.length <= colIdx) rowArr.push("");
+      rowArr[colIdx] = String(val).trim();
+    }
+
+    if (rowArr.some(v => v.length > 0)) {
+      rows.push(rowArr);
+    }
+  }
+  return rows;
+}
+
+async function readTabularFileToRows(file) {
+  const name = (file && file.name ? file.name : "").toLowerCase();
+  if (name.endsWith(".xlsx")) {
+    const buf = await file.arrayBuffer();
+    return await parseXLSXArrayBuffer(buf);
+  }
+  const text = await file.text();
+  return parseCSVText(text);
+}
+
+window.handleRosterFileUpload = async function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  try {
+    const rows = await readTabularFileToRows(file);
+    parseMasterRosterRows(rows);
+  } catch (err) {
+    alert("Error al procesar el archivo de nómina: " + err.message);
+  } finally {
+    e.target.value = "";
+  }
+};
+
+function parseMasterRosterRows(rows) {
+  if (!rows || rows.length < 2) {
+    showToast("El archivo no contiene suficientes filas.");
+    return;
+  }
+  const header = rows[0].map(h => String(h || "").trim().toLowerCase());
+  let colNum = header.findIndex(h => /n(ú|u)mero\s*de\s*lista|n[°ºo\.]?\s*lista|lista|n[°ºo]\b|id/i.test(h));
+  let colName = header.findIndex(h => /nombre\s*completo|nombre|estudiante|alumno/i.test(h));
+  let colGroup = header.findIndex(h => /curso|grupo|grado|secci(o|ó)n/i.test(h));
+  let colSex = header.findIndex(h => /sexo|g(é|e)nero/i.test(h));
+
+  if (colNum === -1) colNum = 0;
+  if (colName === -1) colName = 1;
+
+  let added = 0;
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    if (!row || row.length <= colName) continue;
+    const rawNum = row[colNum];
+    const rawName = row[colName];
+    if (!rawName || !String(rawName).trim()) continue;
+
+    const listNum = parseInt(rawNum, 10) || (masterRoster.length + 1);
+    const name = String(rawName).trim();
+    const group = (colGroup !== -1 && row[colGroup]) ? String(row[colGroup]).trim() : "";
+    let sex = "Hombre";
+    if (colSex !== -1 && row[colSex]) {
+      const sVal = String(row[colSex]).trim().toLowerCase();
+      if ((sVal.startsWith("m") && !sVal.includes("asc")) || sVal.startsWith("f") || sVal.includes("ujer")) {
+        sex = "Mujer";
+      } else if (sVal.startsWith("h") || sVal.includes("asc") || sVal.startsWith("v")) {
+        sex = "Hombre";
+      }
+    }
+
+    const exIdx = masterRoster.findIndex(r => r.listNum === listNum);
+    if (exIdx !== -1) {
+      masterRoster[exIdx] = { listNum, name, group, sex };
+    } else {
+      masterRoster.push({ listNum, name, group, sex });
+    }
+    added++;
+
+    const stMatch = students.find(s => s.listNum === listNum);
+    if (stMatch) {
+      if (!stMatch.name || stMatch.name.startsWith("Estudiante N°")) stMatch.name = name;
+      if (group && !stMatch.group) stMatch.group = group;
+      if (sex && !stMatch.sex) stMatch.sex = sex;
+    }
+  }
+
+  masterRoster.sort((a, b) => a.listNum - b.listNum);
+  saveMasterRoster();
+  saveToStorage();
+  autoDiscoverCourses();
+  renderRosterTable();
+  refreshAllViews();
+  showToast(`✓ Se cargaron ${added} estudiantes en la nómina maestra.`);
+}
+
+window.handleGoogleFormsFile = async function(e, phase) {
+  const file = e.target.files[0];
+  if (!file) return;
+  try {
+    const rows = await readTabularFileToRows(file);
+    importGoogleFormsRows(rows, phase);
+  } catch (err) {
+    alert("Error al importar respuestas de Google Forms: " + err.message);
+  } finally {
+    e.target.value = "";
+  }
+};
+
+function importGoogleFormsRows(rows, phase) {
+  if (!rows || rows.length < 2) {
+    showToast("El archivo no contiene respuestas suficientes.");
+    return;
+  }
+  const safeCsv = rows.map(r =>
+    r.map(cell => `"${String(cell === undefined || cell === null ? "" : cell).replace(/"/g, '""')}"`).join(";")
+  ).join("\n");
+  importGoogleFormsCSV(safeCsv, phase);
+}
+
+// 2. INDICADOR DISCRETO DE ORIGEN DE LA INTERFAZ Y ESTADO DE RED
+function detectAndRenderUIOrigin() {
+  const badge = document.getElementById("uiOriginBadge");
+  const textEl = document.getElementById("uiOriginText");
+  const dotEl = document.getElementById("uiOriginDot");
+  if (!badge || !textEl || !dotEl) return;
+
+  const params = new URLSearchParams(window.location.search || "");
+  const metaEl = document.querySelector('meta[name="af5-ui-origin"]');
+  const explicitOrigin = (
+    window.__AF5_UI_ORIGIN__ ||
+    params.get("origen") ||
+    params.get("origin") ||
+    (metaEl ? metaEl.getAttribute("content") : "") ||
+    ""
+  ).toLowerCase().trim();
+
+  const href = String(window.location.href || "");
+  const lowerHref = href.toLowerCase();
+  const isOnline = (typeof navigator !== "undefined" && "onLine" in navigator) ? navigator.onLine : true;
+
+  let label = "Archivo local";
+  let detail = "Cargado directamente desde archivo local.";
+
+  if (explicitOrigin === "github" || explicitOrigin === "remoto" || explicitOrigin === "remote") {
+    label = "GitHub (Actualizada)";
+    detail = "Interfaz descargada desde el repositorio remoto en GitHub.";
+  } else if (explicitOrigin === "respaldo" || explicitOrigin === "meipass" || explicitOrigin === "embedded") {
+    label = "Respaldo interno (.exe)";
+    detail = "Interfaz extraída del respaldo integrado dentro de Calculadora_AF5.exe.";
+  } else if (explicitOrigin === "local" || explicitOrigin === "cache" || explicitOrigin === "appdata") {
+    label = "Caché local (AppData)";
+    detail = "Copia local en %LOCALAPPDATA%\\CalculadoraAF5_Desktop\\Calculadora_AF5.html.";
+  } else if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+    label = lowerHref.includes("github") ? "GitHub (Remoto)" : "Web (Remoto)";
+    detail = "Interfaz cargada en línea desde " + window.location.origin;
+  } else if (lowerHref.includes("_mei")) {
+    label = "Respaldo interno (.exe)";
+    detail = "Interfaz ejecutándose desde el paquete interno de PyInstaller (_MEIPASS).";
+  } else if (lowerHref.includes("calculadoraaf5_desktop") || lowerHref.includes("appdata")) {
+    label = isOnline ? "Local / Sync GitHub" : "Caché local (Sin red)";
+    detail = "Ubicación: %LOCALAPPDATA%\\CalculadoraAF5_Desktop\\Calculadora_AF5.html";
+  }
+
+  dotEl.classList.toggle("offline", !isOnline);
+  textEl.textContent = `Interfaz: ${label}`;
+  badge.title = `${detail}\nEstado de red: ${isOnline ? "En línea" : "Sin conexión"}`;
+}
+
+// 3. INFORME COMPLETO PSICOEDUCATIVO AF-5 (INDIVIDUAL Y POR CURSO — PDF)
+let currentQuickReportFilename = "Informe_Completo_AF5";
+let currentQuickReportPlainText = "";
+
+const DIM_INTERP_GUIDE = {
+  Academico: {
+    name: "Académico / Laboral",
+    low:  "Evidencia una autopercepción disminuida respecto al propio desempeño escolar, hábitos de estudio y valoración percibida por docentes. Se sugiere reforzar experiencias de logro gradual y retroalimentación positiva específica.",
+    mid:  "Refleja una valoración ajustada y funcional de sus competencias académicas y responsabilidad escolar, con espacio para consolidar estrategias de autorregulación y metas de aprendizaje.",
+    high: "Muestra una sólida confianza en su rendimiento escolar, esfuerzo sostenido y reconocimiento positivo por parte de figuras docentes, constituyendo un factor protector relevante."
+  },
+  Social: {
+    name: "Social",
+    low:  "Señala dificultades percibidas para iniciar o mantener vínculos interpersonales y sensación de menor integración con pares. Conviene potenciar espacios de participación guiada y habilidades socioemocionales.",
+    mid:  "Indica un desenvolvimiento social adecuado dentro del rango normativo, manteniendo relaciones funcionales con sus pares y capacidad suficiente para interactuar en contextos grupales.",
+    high: "Destaca por facilidad para establecer amistades, percepción positiva de aceptación grupal y disposición prosocial, actuando como recurso clave para la convivencia escolar."
+  },
+  Emocional: {
+    name: "Emocional",
+    low:  "Refleja mayor vulnerabilidad ante situaciones de tensión, nerviosismo o evaluación externa, con necesidad de fortalecer estrategias de regulación emocional y manejo del estrés.",
+    mid:  "Presenta un nivel intermedio de regulación emocional y tolerancia a la frustración, manejando adecuadamente las demandas cotidianas aunque sensible a contextos de alta presión.",
+    high: "Manifiesta estabilidad emocional, adecuada gestión de la ansiedad ante demandas evaluativas y seguridad personal frente a situaciones nuevas o desafiantes."
+  },
+  Familiar: {
+    name: "Familiar",
+    low:  "Sugiere percepción de menor apoyo, cercanía o validación en el entorno familiar. Resulta prioritario fortalecer el vínculo escuela–familia y explorar redes de contención afectiva.",
+    mid:  "Da cuenta de un vínculo familiar funcional y equilibrado dentro de lo esperado para su etapa evolutiva, con percepción general de apoyo y pertenencia en el hogar.",
+    high: "Evidencia un entorno familiar percibido como cálido, afectivo y contenedor, con altos niveles de confianza y respaldo que fortalecen el bienestar integral."
+  },
+  Fisico: {
+    name: "Físico",
+    low:  "Refleja insatisfacción o inseguridad respecto a la propia imagen corporal y/o desempeño físico-deportivo. Se recomienda promover una visión saludable, respetuosa y diversa del cuerpo.",
+    mid:  "Muestra una percepción equilibrada de su aspecto físico y condición corporal, acorde al promedio esperado para su grupo de edad y sexo.",
+    high: "Denota una valoración positiva de su apariencia física, autocuidado y competencia motriz o deportiva, favoreciendo la seguridad personal."
+  }
+};
+
+function getInterpParagraph(dimKey, pc, deltaPc) {
+  const g = DIM_INTERP_GUIDE[dimKey];
+  if (!g || pc === null || pc === undefined || isNaN(pc)) {
+    return "Sin evaluación disponible en esta dimensión.";
+  }
+  let base = pc <= 25 ? g.low : (pc <= 70 ? g.mid : g.high);
+  if (deltaPc !== null && deltaPc !== undefined && !isNaN(deltaPc)) {
+    if (deltaPc >= 5) {
+      base += ` Entre la medición inicial y final se observa un avance significativo (+${fmtNum(deltaPc, 1)} puntos percentiles), reflejando un impacto favorable en esta área.`;
+    } else if (deltaPc > 1) {
+      base += ` Presenta una tendencia positiva moderada (+${fmtNum(deltaPc, 1)} puntos percentiles) respecto del Pre-Test.`;
+    } else if (deltaPc <= -5) {
+      base += ` Se registra un descenso relevante (${fmtSigned(deltaPc, 1)} puntos percentiles) frente al Pre-Test, lo que amerita seguimiento focalizado.`;
+    } else if (deltaPc < -1) {
+      base += ` Muestra una leve disminución (${fmtSigned(deltaPc, 1)} puntos percentiles) respecto a la línea base.`;
+    } else {
+      base += ` Se mantiene estable respecto al Pre-Test (${fmtSigned(deltaPc, 1)} puntos percentiles).`;
+    }
+  }
+  return base;
+}
+
+function buildIndividualRecommendations(s) {
+  const ref = s.post || s.pre;
+  if (!ref) return ["Completar la evaluación AF-5 para emitir orientaciones específicas."];
+  const recos = [];
+  const lowDims = DIMS.filter(d => ref.pcs[d.key] <= 25);
+  const highDims = DIMS.filter(d => ref.pcs[d.key] >= 75);
+
+  if (lowDims.length > 0) {
+    recos.push(`Priorizar acompañamiento focalizado en las dimensiones con percentil bajo o muy bajo: ${lowDims.map(d => `${d.short} (Pc ${ref.pcs[d.key]})`).join(", ")}.`);
+  } else {
+    recos.push("El perfil actual no presenta dimensiones en rango de riesgo (Pc ≤ 25); se recomienda mantener acciones preventivas y de consolidación.");
+  }
+  if (highDims.length > 0) {
+    recos.push(`Utilizar como anclaje motivacional y factor protector las fortalezas identificadas en ${highDims.map(d => `${d.short} (Pc ${ref.pcs[d.key]})`).join(", ")}.`);
+  }
+  if (ref.pcs.Emocional <= 30) {
+    recos.push("Incorporar rutinas breves de regulación emocional, respiración consciente y preparación gradual frente a instancias evaluativas.");
+  }
+  if (ref.pcs.Academico <= 30) {
+    recos.push("Establecer metas académicas acotadas y alcanzables con retroalimentación positiva por esfuerzo y progreso.");
+  }
+  if (ref.pcs.Social <= 30) {
+    recos.push("Favorecer trabajo colaborativo en grupos pequeños y roles estructurados que promuevan sentido de pertenencia.");
+  }
+  if (ref.pcs.Familiar <= 30) {
+    recos.push("Coordinar entrevista de devolución y alianza formativa con apoderados/familia para reforzar redes de apoyo.");
+  }
+  if (s.pre && s.post) {
+    const declines = DIMS.filter(d => (s.post.pcs[d.key] - s.pre.pcs[d.key]) <= -5);
+    if (declines.length > 0) {
+      recos.push(`Realizar seguimiento individual ante el descenso observado en Post-Test en: ${declines.map(d => d.short).join(", ")}.`);
+    }
+  }
+  return recos;
+}
+
+function buildCourseRecommendations(stats) {
+  const recos = [];
+  const lowDims = DIMS.filter(d => {
+    const pc = stats.dimDetails[d.key].postPc !== null ? stats.dimDetails[d.key].postPc : stats.dimDetails[d.key].prePc;
+    return pc !== null && pc <= 40;
+  });
+  const strongDims = DIMS.filter(d => {
+    const pc = stats.dimDetails[d.key].postPc !== null ? stats.dimDetails[d.key].postPc : stats.dimDetails[d.key].prePc;
+    return pc !== null && pc >= 65;
+  });
+
+  if (lowDims.length > 0) {
+    recos.push(`Diseñar talleres o cápsulas de intervención grupal orientadas a fortalecer: ${lowDims.map(d => d.short).join(", ")}.`);
+  } else {
+    recos.push("Las medias del curso se sitúan en rangos normativos saludables; se sugiere sostener las prácticas pedagógicas y de convivencia vigentes.");
+  }
+  if (strongDims.length > 0) {
+    recos.push(`Potenciar los recursos colectivos destacados del curso en ${strongDims.map(d => d.short).join(", ")} como base para actividades de tutoría entre pares y cohesión grupal.`);
+  }
+  if (stats.globalDeltaPc !== null) {
+    if (stats.globalDeltaPc >= 3) {
+      recos.push(`Sistematizar y replicar las estrategias aplicadas entre Pre-Test y Post-Test dado el avance global positivo (+${fmtNum(stats.globalDeltaPc, 1)} Pc).`);
+    } else if (stats.globalDeltaPc <= -2) {
+      recos.push(`Revisar factores contextuales o de convivencia escolar asociados a la baja grupal (${fmtSigned(stats.globalDeltaPc, 1)} Pc) y planificar un plan de acompañamiento con jefatura de curso.`);
+    } else {
+      recos.push("Mantener monitoreo periódico y complementar el análisis grupal con la revisión de casos individuales ubicados en percentil ≤ 25.");
+    }
+  }
+  if (stats.nPre > stats.nPost && stats.nPost > 0) {
+    recos.push(`Completar la evaluación Post-Test de los ${stats.nPre - stats.nPost} estudiantes pendientes para maximizar la representatividad emparejada del curso.`);
+  }
+  return recos;
+}
+
+function renderOffscreenIndividualChartURL(s) {
+  const w = 740, h = 290, dpr = 2;
+  const canvas = document.createElement("canvas");
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, w, h);
+
+  const pal = getPaletteColors();
+  const isM = s.sex === "Hombre";
+  const preBg = isM ? pal.malePreFill : pal.femalePreFill;
+  const postBg = isM ? pal.malePostFill : pal.femalePostFill;
+  const stroke = isM ? pal.maleStroke : pal.femaleStroke;
+  const textCol = isM ? pal.maleText : pal.femaleText;
+
+  ctx.fillStyle = "#2d2640";
+  ctx.font = "700 13px Segoe UI, sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText(`Perfil de Percentiles AF-5 — ${s.name}`, w / 2, 20);
+
+  ctx.font = "600 11px Segoe UI, sans-serif";
+  let lx = w / 2 - 90;
+  if (s.pre) {
+    ctx.fillStyle = createHatchedPattern(ctx, preBg, stroke);
+    ctx.strokeStyle = stroke; ctx.lineWidth = 1.4;
+    ctx.fillRect(lx, 30, 12, 12); ctx.strokeRect(lx, 30, 12, 12);
+    ctx.fillStyle = "#333"; ctx.textAlign = "left";
+    ctx.fillText("Pre-Test", lx + 17, 40);
+    lx += 95;
+  }
+  if (s.post) {
+    ctx.fillStyle = postBg;
+    ctx.strokeStyle = stroke; ctx.lineWidth = 1.4;
+    ctx.fillRect(lx, 30, 12, 12); ctx.strokeRect(lx, 30, 12, 12);
+    ctx.fillStyle = "#333"; ctx.textAlign = "left";
+    ctx.fillText("Post-Test", lx + 17, 40);
+  }
+
+  const pad = { top: 52, right: 130, bottom: 30, left: 120 };
+  const plotW = w - pad.left - pad.right;
+  const plotH = h - pad.top - pad.bottom;
+
+  // Bandas normativas verticales suaves
+  const vBands = [
+    { x1: 0,  x2: 25, col: "rgba(254, 226, 226, 0.35)" },
+    { x1: 25, x2: 75, col: "rgba(241, 245, 249, 0.45)" },
+    { x1: 75, x2: 100, col: "rgba(220, 252, 231, 0.35)" }
+  ];
+  vBands.forEach(b => {
+    ctx.fillStyle = b.col;
+    ctx.fillRect(pad.left + (b.x1 / 100) * plotW, pad.top, ((b.x2 - b.x1) / 100) * plotW, plotH);
+  });
+
+  ctx.font = "500 10px Segoe UI, sans-serif";
+  ctx.textAlign = "center";
+  [0, 25, 50, 75, 100].forEach(xv => {
+    const px = pad.left + (xv / 100) * plotW;
+    ctx.strokeStyle = xv === 50 ? "#94a3b8" : "#e2e8f0";
+    ctx.lineWidth = xv === 50 ? 1.4 : 1;
+    ctx.beginPath(); ctx.moveTo(px, pad.top); ctx.lineTo(px, pad.top + plotH); ctx.stroke();
+    ctx.fillStyle = "#4a5162";
+    ctx.fillText("Pc " + xv, px, pad.top + plotH + 16);
+  });
+
+  const rowH = plotH / DIMS.length;
+  const both = !!(s.pre && s.post);
+  const barH = both ? 15 : 22;
+
+  DIMS.forEach((d, i) => {
+    const ry = pad.top + i * rowH;
+    ctx.fillStyle = "#2d2640";
+    ctx.font = "700 11.5px Segoe UI, sans-serif";
+    ctx.textAlign = "right";
+    ctx.fillText(d.short, pad.left - 10, ry + rowH / 2 + 4);
+
+    if (s.pre) {
+      const pc = s.pre.pcs[d.key];
+      const y = both ? (ry + rowH / 2 - barH - 2) : (ry + (rowH - barH) / 2);
+      const bw = (pc / 100) * plotW;
+      ctx.fillStyle = createHatchedPattern(ctx, preBg, stroke);
+      ctx.strokeStyle = stroke; ctx.lineWidth = 1.3;
+      ctx.fillRect(pad.left, y, bw, barH); ctx.strokeRect(pad.left, y, bw, barH);
+      ctx.fillStyle = "#4a5162"; ctx.font = "600 10.5px Segoe UI, sans-serif"; ctx.textAlign = "left";
+      ctx.fillText(`Pre: Pc ${pc} (${fmtNum(s.pre.pds[d.key],2)})`, pad.left + bw + 6, y + barH / 2 + 3.5);
+    }
+
+    if (s.post) {
+      const pc = s.post.pcs[d.key];
+      const y = both ? (ry + rowH / 2 + 2) : (ry + (rowH - barH) / 2);
+      const bw = (pc / 100) * plotW;
+      ctx.fillStyle = postBg;
+      ctx.strokeStyle = stroke; ctx.lineWidth = 1.3;
+      ctx.fillRect(pad.left, y, bw, barH); ctx.strokeRect(pad.left, y, bw, barH);
+      ctx.fillStyle = textCol; ctx.font = "700 10.5px Segoe UI, sans-serif"; ctx.textAlign = "left";
+      ctx.fillText(`Post: Pc ${pc} (${fmtNum(s.post.pds[d.key],2)})`, pad.left + bw + 6, y + barH / 2 + 3.5);
+    }
+  });
+
+  return canvas.toDataURL("image/png", 1.0);
+}
+
+function renderOffscreenCourseChartsURLs(stats) {
+  // Usar contenedor visible en esquina superior izquierda (no offscreen clip) con dimensiones explícitas
+  const tmpWrap = document.createElement("div");
+  tmpWrap.style.cssText = "position:fixed; left:0; top:0; width:640px; height:360px; opacity:0.01; pointer-events:none; z-index:-1; overflow:hidden;";
+  const c1 = document.createElement("canvas");
+  c1.id = "_tmpRptCourseDims";
+  c1.width = 640;
+  c1.height = 360;
+  c1.style.cssText = "display:block; width:640px; height:360px;";
+  const c2 = document.createElement("canvas");
+  c2.id = "_tmpRptCourseDeltas";
+  c2.width = 640;
+  c2.height = 360;
+  c2.style.cssText = "display:block; width:640px; height:360px;";
+  tmpWrap.appendChild(c1);
+  tmpWrap.appendChild(c2);
+  document.body.appendChild(tmpWrap);
+
+  drawCourseDimsChart("_tmpRptCourseDims", stats);
+  drawCourseDeltasChart("_tmpRptCourseDeltas", stats);
+
+  const url1 = c1.toDataURL("image/png", 1.0);
+  const url2 = c2.toDataURL("image/png", 1.0);
+  document.body.removeChild(tmpWrap);
+  return { dimsUrl: url1, deltasUrl: url2 };
+}
+
+function syncReportNotesForPrint() {
+  const ta = document.getElementById("rptProfessionalNotes");
+  const pr = document.getElementById("rptProfessionalNotesPrint");
+  const sec = document.getElementById("rptNotesSection");
+  if (!ta || !pr || !sec) return;
+  const val = ta.value.trim();
+  pr.textContent = val;
+  pr.classList.toggle("has-content", val.length > 0);
+  sec.classList.toggle("empty-notes", val.length === 0);
+}
+
+function openIndividualQuickReport(studentId) {
+  const s = students.find(x => x.id === studentId);
+  if (!s) {
+    showToast("No se encontró el estudiante seleccionado.");
+    return;
+  }
+
+  const cp = courseProfiles.find(c => c.name.toLowerCase().trim() === (s.group || "").toLowerCase().trim());
+  const lvl = cp ? cp.level : (s.group ? detectLevelFromCourseName(s.group) : "Sin nivel");
+  const today = new Date().toLocaleDateString("es-CL", { year: "numeric", month: "long", day: "numeric" });
+  const chartUrl = renderOffscreenIndividualChartURL(s);
+
+  const preAvgPc = s.pre ? DIMS.reduce((a, d) => a + s.pre.pcs[d.key], 0) / DIMS.length : null;
+  const postAvgPc = s.post ? DIMS.reduce((a, d) => a + s.post.pcs[d.key], 0) / DIMS.length : null;
+  const avgDeltaPc = (preAvgPc !== null && postAvgPc !== null) ? (postAvgPc - preAvgPc) : null;
+  const avgDeltaPd = (s.pre && s.post) ? DIMS.reduce((a, d) => a + (s.post.pds[d.key] - s.pre.pds[d.key]), 0) / DIMS.length : null;
+
+  const refRec = s.post || s.pre;
+  let bestDim = null, lowDim = null;
+  if (refRec) {
+    DIMS.forEach(d => {
+      const pc = refRec.pcs[d.key];
+      if (!bestDim || pc > bestDim.pc) bestDim = { label: d.short, pc };
+      if (!lowDim || pc < lowDim.pc) lowDim = { label: d.short, pc };
+    });
+  }
+
+  let tableRows = "";
+  let interpHtml = "";
+  const plainLines = [
+    `INFORME PSICOEDUCATIVO DE AUTOCONCEPTO AF-5 — INDIVIDUAL`,
+    `Fecha: ${today} | Estudiante: ${s.name}${s.listNum ? " (N° " + s.listNum + ")" : ""} | Curso: ${s.group || "Sin curso"} (${lvl}) | Sexo: ${s.sex}`,
+    ""
+  ];
+
+  DIMS.forEach(d => {
+    const prePd = s.pre ? fmtNum(s.pre.pds[d.key], 2) : "—";
+    const prePc = s.pre ? s.pre.pcs[d.key] : null;
+    const postPd = s.post ? fmtNum(s.post.pds[d.key], 2) : "—";
+    const postPc = s.post ? s.post.pcs[d.key] : null;
+    const dPd = (s.pre && s.post) ? (s.post.pds[d.key] - s.pre.pds[d.key]) : null;
+    const dPc = (prePc !== null && postPc !== null) ? (postPc - prePc) : null;
+
+    const refPc = postPc !== null ? postPc : prePc;
+    const refQual = getQualitativeLevelInfo(refPc);
+
+    tableRows += `
+      <tr>
+        <td class="left">${d.label}</td>
+        <td>${prePd}</td>
+        <td>${prePc !== null ? `<span class="pc-chip ${getPcChipClass(prePc)}">Pc ${prePc}</span>` : "—"}</td>
+        <td>${postPd}</td>
+        <td>${postPc !== null ? `<span class="pc-chip ${getPcChipClass(postPc)}">Pc ${postPc}</span>` : "—"}</td>
+        <td>${refPc !== null ? `<span class="qual-badge ${refQual.cls}">${refQual.label}</span>` : "—"}</td>
+        <td>${dPd !== null ? `<span class="delta-badge ${deltaClass(dPd)}">${fmtSigned(dPd, 2)}</span>` : "—"}</td>
+        <td>${dPc !== null ? `<span class="delta-badge ${deltaClass(dPc, 0.5)}">${fmtSigned(dPc, 0)} Pc</span>` : "—"}</td>
+      </tr>
+    `;
+
+    const interpText = getInterpParagraph(d.key, refPc, dPc);
+    interpHtml += `
+      <div class="rpt-interp-item">
+        <div class="rpt-interp-head">
+          <strong>${d.label}</strong>
+          <div>
+            ${refPc !== null ? `<span class="qual-badge ${refQual.cls}">Pc ${refPc} — ${refQual.label}</span>` : ""}
+            ${dPc !== null ? ` <span class="delta-badge ${deltaClass(dPc, 0.5)}">Δ ${fmtSigned(dPc, 0)} Pc</span>` : ""}
+          </div>
+        </div>
+        <p class="rpt-interp-text">${interpText}</p>
+      </div>
+    `;
+    plainLines.push(`- ${d.label}: Pre ${prePd} (Pc ${prePc ?? "—"}) | Post ${postPd} (Pc ${postPc ?? "—"}) | ΔPc: ${dPc !== null ? fmtSigned(dPc, 0) : "—"}`);
+  });
+
+  const recos = buildIndividualRecommendations(s);
+  const recosHtml = recos.map(r => `<li>${escapeHtml(r)}</li>`).join("");
+
+  const htmlDoc = `
+    <div class="rpt-header">
+      <div class="rpt-header-left">
+        <div class="rpt-logo">AF5</div>
+        <div>
+          <h1 class="rpt-title">Informe Psicoeducativo Individual — AF-5</h1>
+          <p class="rpt-subtitle">Cuestionario de Autoconcepto Forma 5 (García &amp; Musitu • Baremos Oficiales TEA)</p>
+        </div>
+      </div>
+      <div class="rpt-meta-right">
+        <div><strong>Fecha:</strong> ${escapeHtml(today)}</div>
+        <div><strong>Evaluación:</strong> ${s.pre && s.post ? "Pre-Test y Post-Test" : (s.pre ? "Pre-Test (Inicial)" : "Post-Test (Final)")}</div>
+        <div><strong>Profesional:</strong> Ps. Ricardo Medalla Córdova</div>
+      </div>
+    </div>
+    <div class="rpt-body">
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">1. Antecedentes de Identificación <span class="tag">${escapeHtml(s.sex)}</span></h3>
+        <div class="rpt-id-grid">
+          <div class="rpt-id-item"><div class="lbl">Nombre del Estudiante</div><div class="val">${escapeHtml(s.name)}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Curso / Nivel Escolar</div><div class="val">${escapeHtml(s.group || "Sin curso")} (${escapeHtml(lvl)})</div></div>
+          <div class="rpt-id-item"><div class="lbl">N° de Lista / Sexo</div><div class="val">${s.listNum ? "N° " + s.listNum : "Sin N°"} • ${escapeHtml(s.sex)}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Evaluación Pre-Test</div><div class="val">${s.pre ? `${s.pre.age} años (Baremo ${s.pre.baremo})` : "No registrada"}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Evaluación Post-Test</div><div class="val">${s.post ? `${s.post.age} años (Baremo ${s.post.baremo})` : "No registrada"}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Estado de Seguimiento</div><div class="val">${s.pre && s.post ? "✓ Emparejado (Pre y Post)" : "Evaluación parcial"}</div></div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">2. Resumen Ejecutivo de Resultados</h3>
+        <div class="rpt-kpi-grid">
+          <div class="rpt-kpi" style="border-top-color:#5c6bc0;">
+            <div class="k-lbl">Percentil Global Pre</div>
+            <div class="k-val">${preAvgPc !== null ? "Pc " + fmtNum(preAvgPc, 1) : "—"}</div>
+            <div class="k-sub">${preAvgPc !== null ? getQualitativeLevelInfo(preAvgPc).label : "Sin registro Pre"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#2f855a;">
+            <div class="k-lbl">Percentil Global Post</div>
+            <div class="k-val">${postAvgPc !== null ? "Pc " + fmtNum(postAvgPc, 1) : "—"}</div>
+            <div class="k-sub">${postAvgPc !== null ? getQualitativeLevelInfo(postAvgPc).label : "Sin registro Post"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#7b4ca0;">
+            <div class="k-lbl">Evolución Neta (Δ)</div>
+            <div class="k-val">${avgDeltaPc !== null ? fmtSigned(avgDeltaPc, 1) + " Pc" : "—"}</div>
+            <div class="k-sub">${avgDeltaPc !== null ? `${fmtSigned(avgDeltaPd, 2)} PD • ${getMobilityDeltaInfo(avgDeltaPc).label}` : "Requiere Pre y Post"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#d97706;">
+            <div class="k-lbl">Fortaleza / Atención</div>
+            <div class="k-val" style="font-size:13.5px;">${bestDim ? "▲ " + bestDim.label + " (Pc " + bestDim.pc + ")" : "—"}</div>
+            <div class="k-sub">${lowDim ? "Atención: " + lowDim.label + " (Pc " + lowDim.pc + ")" : "—"}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">3. Perfil Gráfico de Autoconcepto (Percentiles 1–99)</h3>
+        <div class="rpt-charts-row single">
+          <div class="rpt-chart-box"><img src="${chartUrl}" alt="Gráfico de perfil individual AF-5"></div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">4. Tabla Psicométrica Detallada</h3>
+        <table class="rpt-table">
+          <thead>
+            <tr>
+              <th class="left">Dimensión AF-5</th>
+              <th>Pre PD</th>
+              <th>Pre Pc</th>
+              <th>Post PD</th>
+              <th>Post Pc</th>
+              <th>Nivel Actual</th>
+              <th>Δ PD</th>
+              <th>Δ Pc</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+            <tr class="rpt-summary-row">
+              <td class="left">PROMEDIO GLOBAL</td>
+              <td>${s.pre ? fmtNum(DIMS.reduce((a, d) => a + s.pre.pds[d.key], 0) / DIMS.length, 2) : "—"}</td>
+              <td>${preAvgPc !== null ? "Pc " + fmtNum(preAvgPc, 1) : "—"}</td>
+              <td>${s.post ? fmtNum(DIMS.reduce((a, d) => a + s.post.pds[d.key], 0) / DIMS.length, 2) : "—"}</td>
+              <td>${postAvgPc !== null ? "Pc " + fmtNum(postAvgPc, 1) : "—"}</td>
+              <td>${refRec ? getQualitativeLevelInfo(postAvgPc !== null ? postAvgPc : preAvgPc).label : "—"}</td>
+              <td>${avgDeltaPd !== null ? fmtSigned(avgDeltaPd, 2) : "—"}</td>
+              <td>${avgDeltaPc !== null ? fmtSigned(avgDeltaPc, 1) + " Pc" : "—"}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">5. Análisis Interpretativo por Dimensión</h3>
+        <div class="rpt-interp-list">${interpHtml}</div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">6. Orientaciones y Sugerencias de Acompañamiento</h3>
+        <div class="rpt-reco-box">
+          <strong style="font-size:12.5px; color:#065f46;">Recomendaciones psicoeducativas sugeridas:</strong>
+          <ul>${recosHtml}</ul>
+        </div>
+      </div>
+
+      <div class="rpt-section rpt-notes-section empty-notes" id="rptNotesSection">
+        <h3 class="rpt-section-title">7. Observaciones Clínicas / Educacionales Adicionales <span class="tag no-print">Opcional — se incluye en el PDF si escribes aquí</span></h3>
+        <textarea id="rptProfessionalNotes" class="rpt-notes-edit no-print" placeholder="Escribe observaciones particulares, acuerdos con familia/docentes o derivaciones (si lo dejas vacío, esta sección no aparecerá en el PDF)..." oninput="syncReportNotesForPrint()"></textarea>
+        <div id="rptProfessionalNotesPrint" class="rpt-notes-print"></div>
+      </div>
+
+      <div class="rpt-sign-row">
+        <div class="rpt-legal-note">
+          <strong>Nota técnica y confidencialidad:</strong> Resultados obtenidos mediante el instrumento AF-5 (García &amp; Musitu, TEA Ediciones) baremado por edad y sexo. Documento de carácter confidencial para fines psicoeducativos y de orientación.
+        </div>
+        <div class="rpt-sign-box">
+          <div class="rpt-sign-line"></div>
+          <div class="rpt-sign-name">Ps. Ricardo Medalla Córdova</div>
+          <div class="rpt-sign-role">Psicólogo • Evaluación Psicoeducativa AF-5</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const safeName = s.name.replace(/[^a-zA-Z0-9áéíóúñÁÉÍÓÚÑ ]/g, "").replace(/\s+/g, "_");
+  currentQuickReportFilename = `Informe_Completo_AF5_Individual_${safeName}`;
+  currentQuickReportPlainText = plainLines.join("\n") + "\n\nSugerencias:\n" + recos.map(r => "• " + r).join("\n");
+
+  document.getElementById("quickReportTitle").textContent = `📄 Informe Completo Individual — ${s.name}`;
+  document.getElementById("quickReportSub").textContent = `${s.group || "Sin curso"} (${lvl}) • Listo para descargar en PDF`;
+  document.getElementById("quickReportBody").innerHTML = htmlDoc;
+  document.getElementById("quickReportModal").classList.add("open");
+}
+
+function openCourseQuickReport(courseName) {
+  const cName = courseName || activeCourseName;
+  if (!cName) {
+    showToast("No hay ningún curso seleccionado para generar el informe.");
+    return;
+  }
+  const sampleMode = document.getElementById("courseSampleMode") ? document.getElementById("courseSampleMode").value : "all";
+  const stats = calcCourseProfileStats(cName, sampleMode);
+  const today = new Date().toLocaleDateString("es-CL", { year: "numeric", month: "long", day: "numeric" });
+  const { dimsUrl, deltasUrl } = renderOffscreenCourseChartsURLs(stats);
+
+  let tableRows = "";
+  let interpHtml = "";
+  const plainLines = [
+    `INFORME PSICOEDUCATIVO DE CURSO — AUTOCONCEPTO AF-5`,
+    `Fecha: ${today} | Curso: ${stats.courseName} | Nivel: ${stats.level} | Alumnos: ${stats.nTotal} (Pre: ${stats.nPre}, Post: ${stats.nPost}, Emparejados: ${stats.nPaired})`,
+    ""
+  ];
+
+  DIMS.forEach(d => {
+    const dim = stats.dimDetails[d.key];
+    const refPc = dim.postPc !== null ? dim.postPc : dim.prePc;
+    const refQual = getQualitativeLevelInfo(refPc);
+
+    tableRows += `
+      <tr>
+        <td class="left">${d.label}</td>
+        <td>${dim.prePd !== null ? fmtNum(dim.prePd, 2) : "—"}</td>
+        <td>${dim.prePc !== null ? `<strong>${fmtNum(dim.prePc, 1)}</strong>` : "—"}</td>
+        <td>${dim.prePc !== null ? `<span class="qual-badge ${dim.preQual.cls}">${dim.preQual.label}</span>` : "—"}</td>
+        <td>${dim.postPd !== null ? fmtNum(dim.postPd, 2) : "—"}</td>
+        <td>${dim.postPc !== null ? `<strong>${fmtNum(dim.postPc, 1)}</strong>` : "—"}</td>
+        <td>${dim.postPc !== null ? `<span class="qual-badge ${dim.postQual.cls}">${dim.postQual.label}</span>` : "—"}</td>
+        <td>${dim.deltaPd !== null ? fmtSigned(dim.deltaPd, 2) : "—"}</td>
+        <td>${dim.deltaPc !== null ? `<span class="mobility-badge ${dim.mobility.cls}">${dim.mobility.icon} ${fmtSigned(dim.deltaPc, 1)} Pc</span>` : "—"}</td>
+      </tr>
+    `;
+
+    const interpText = getInterpParagraph(d.key, refPc, dim.deltaPc);
+    interpHtml += `
+      <div class="rpt-interp-item">
+        <div class="rpt-interp-head">
+          <strong>${d.label}</strong>
+          <div>
+            ${refPc !== null ? `<span class="qual-badge ${refQual.cls}">Media Pc ${fmtNum(refPc, 1)} — ${refQual.label}</span>` : ""}
+            ${dim.deltaPc !== null ? ` <span class="qual-badge ${dim.mobility.cls === "mob-up" ? "qual-alto" : (dim.mobility.cls === "mob-down" ? "qual-muy-bajo" : "qual-medio")}">${dim.mobility.icon} ${fmtSigned(dim.deltaPc, 1)} Pc</span>` : ""}
+          </div>
+        </div>
+        <p class="rpt-interp-text">${interpText}</p>
+      </div>
+    `;
+    plainLines.push(`- ${d.label}: Pre Pc ${fmtNum(dim.prePc, 1)} → Post Pc ${fmtNum(dim.postPc, 1)} | ΔPc: ${dim.deltaPc !== null ? fmtSigned(dim.deltaPc, 1) : "—"} (${dim.mobility.label})`);
+  });
+
+  const recos = buildCourseRecommendations(stats);
+  const recosHtml = recos.map(r => `<li>${escapeHtml(r)}</li>`).join("");
+
+  const htmlDoc = `
+    <div class="rpt-header">
+      <div class="rpt-header-left">
+        <div class="rpt-logo">AF5</div>
+        <div>
+          <h1 class="rpt-title">Informe Psicoeducativo de Curso — AF-5</h1>
+          <p class="rpt-subtitle">Análisis Colectivo Pre/Post, Baremación Oficial TEA y Movilidad Neta por Dimensión</p>
+        </div>
+      </div>
+      <div class="rpt-meta-right">
+        <div><strong>Fecha:</strong> ${escapeHtml(today)}</div>
+        <div><strong>Muestra:</strong> ${sampleMode === "paired" ? "Emparejados (Pre y Post)" : "Todos los evaluados"}</div>
+        <div><strong>Profesional:</strong> Ps. Ricardo Medalla Córdova</div>
+      </div>
+    </div>
+    <div class="rpt-body">
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">1. Identificación y Cobertura del Grupo Curso <span class="tag">${escapeHtml(stats.level)}</span></h3>
+        <div class="rpt-id-grid">
+          <div class="rpt-id-item"><div class="lbl">Curso Evaluado</div><div class="val">${escapeHtml(stats.courseName)}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Nivel Escolar</div><div class="val">${escapeHtml(stats.level)}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Matrícula / Cobertura</div><div class="val">${stats.nTotal} estudiantes totales</div></div>
+          <div class="rpt-id-item"><div class="lbl">Evaluaciones Registradas</div><div class="val">Pre: ${stats.nPre} • Post: ${stats.nPost} • Emparej.: ${stats.nPaired}</div></div>
+          <div class="rpt-id-item"><div class="lbl">Distribución por Sexo</div><div class="val">${stats.nMales} Hombres (${stats.pctMales}%) / ${stats.nFemales} Mujeres (${stats.pctFemales}%)</div></div>
+          <div class="rpt-id-item"><div class="lbl">Observación del Curso</div><div class="val">${escapeHtml(stats.desc || "Sin observaciones registradas")}</div></div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">2. Indicadores Globales del Curso</h3>
+        <div class="rpt-kpi-grid">
+          <div class="rpt-kpi" style="border-top-color:#5c6bc0;">
+            <div class="k-lbl">Media Global Pre</div>
+            <div class="k-val">${stats.preGlobalPc !== null ? "Pc " + fmtNum(stats.preGlobalPc, 1) : "—"}</div>
+            <div class="k-sub">${stats.preGlobalPc !== null ? getQualitativeLevelInfo(stats.preGlobalPc).label : "Sin datos Pre"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#2f855a;">
+            <div class="k-lbl">Media Global Post</div>
+            <div class="k-val">${stats.postGlobalPc !== null ? "Pc " + fmtNum(stats.postGlobalPc, 1) : "—"}</div>
+            <div class="k-sub">${stats.postGlobalPc !== null ? getQualitativeLevelInfo(stats.postGlobalPc).label : "Sin datos Post"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#7b4ca0;">
+            <div class="k-lbl">Movilidad Global (Δ)</div>
+            <div class="k-val">${stats.globalDeltaPc !== null ? fmtSigned(stats.globalDeltaPc, 1) + " Pc" : "—"}</div>
+            <div class="k-sub">${stats.globalDeltaPc !== null ? stats.globalMobility.label : "Sin comparativa"}</div>
+          </div>
+          <div class="rpt-kpi" style="border-top-color:#d97706;">
+            <div class="k-lbl">Mayor Avance / Atención</div>
+            <div class="k-val" style="font-size:13px;">${stats.topDim ? "▲ " + stats.topDim.name + " (" + fmtSigned(stats.topDim.delta, 1) + " Pc)" : "—"}</div>
+            <div class="k-sub">${stats.challengeDim ? "Atención: " + stats.challengeDim.name + " (" + fmtSigned(stats.challengeDim.delta, 1) + " Pc)" : "—"}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">3. Gráficos Comparativos del Curso</h3>
+        <div class="rpt-charts-row">
+          <div class="rpt-chart-box"><img src="${dimsUrl}" alt="Percentiles medios por dimensión del curso"></div>
+          <div class="rpt-chart-box"><img src="${deltasUrl}" alt="Movilidad neta por dimensión del curso"></div>
+        </div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">4. Tabla de Resultados por Dimensión (Pre, Post y Movilidad)</h3>
+        <table class="rpt-table">
+          <colgroup>
+            <col style="width:20%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:11%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:11%;">
+            <col style="width:9%;">
+            <col style="width:17%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="left">Dimensión AF-5</th>
+              <th>Pre PD</th>
+              <th>Pre Pc</th>
+              <th>Nivel Pre</th>
+              <th>Post PD</th>
+              <th>Post Pc</th>
+              <th>Nivel Post</th>
+              <th>Δ PD</th>
+              <th>Movilidad (Δ Pc)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+            <tr class="rpt-summary-row">
+              <td class="left">PROMEDIO GENERAL DEL CURSO</td>
+              <td>—</td>
+              <td>${stats.preGlobalPc !== null ? fmtNum(stats.preGlobalPc, 1) : "—"}</td>
+              <td>${stats.preGlobalPc !== null ? getQualitativeLevelInfo(stats.preGlobalPc).label : "—"}</td>
+              <td>—</td>
+              <td>${stats.postGlobalPc !== null ? fmtNum(stats.postGlobalPc, 1) : "—"}</td>
+              <td>${stats.postGlobalPc !== null ? getQualitativeLevelInfo(stats.postGlobalPc).label : "—"}</td>
+              <td>${stats.globalDeltaPd !== null ? fmtSigned(stats.globalDeltaPd, 2) : "—"}</td>
+              <td>${stats.globalDeltaPc !== null ? `<span class="mobility-badge ${stats.globalMobility.cls}">${stats.globalMobility.icon} ${fmtSigned(stats.globalDeltaPc, 1)} Pc</span>` : "—"}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">5. Análisis Psicoeducativo por Dimensión</h3>
+        <div class="rpt-interp-list">${interpHtml}</div>
+      </div>
+
+      <div class="rpt-section">
+        <h3 class="rpt-section-title">6. Sugerencias de Intervención y Acompañamiento Grupal</h3>
+        <div class="rpt-reco-box">
+          <strong style="font-size:12.5px; color:#065f46;">Líneas de acción sugeridas para el curso:</strong>
+          <ul>${recosHtml}</ul>
+        </div>
+      </div>
+
+      <div class="rpt-section rpt-notes-section empty-notes" id="rptNotesSection">
+        <h3 class="rpt-section-title">7. Observaciones y Acuerdos del Profesional <span class="tag no-print">Opcional — se incluye en el PDF si escribes aquí</span></h3>
+        <textarea id="rptProfessionalNotes" class="rpt-notes-edit no-print" placeholder="Agrega conclusiones del equipo de convivencia, acuerdos con profesor jefe o próximas fechas de seguimiento (si lo dejas vacío, esta sección no aparecerá en el PDF)..." oninput="syncReportNotesForPrint()"></textarea>
+        <div id="rptProfessionalNotesPrint" class="rpt-notes-print"></div>
+      </div>
+
+      <div class="rpt-sign-row">
+        <div class="rpt-legal-note">
+          <strong>Referencia técnica:</strong> Cuestionario de Autoconcepto Forma 5 (AF-5, García &amp; Musitu, TEA Ediciones). Baremación aplicada individualmente según edad y sexo antes del cálculo de medias grupales.
+        </div>
+        <div class="rpt-sign-box">
+          <div class="rpt-sign-line"></div>
+          <div class="rpt-sign-name">Ps. Ricardo Medalla Córdova</div>
+          <div class="rpt-sign-role">Psicólogo • Informe Colectivo AF-5</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const safeCourse = stats.courseName.replace(/[^a-zA-Z0-9áéíóúñÁÉÍÓÚÑ ]/g, "").replace(/\s+/g, "_");
+  currentQuickReportFilename = `Informe_Completo_AF5_Curso_${safeCourse}`;
+  currentQuickReportPlainText = plainLines.join("\n") + "\n\nSugerencias:\n" + recos.map(r => "• " + r).join("\n");
+
+  document.getElementById("quickReportTitle").textContent = `📄 Informe Completo de Curso — ${stats.courseName}`;
+  document.getElementById("quickReportSub").textContent = `Nivel: ${stats.level} • ${stats.nTotal} alumnos • Listo para descargar en PDF`;
+  document.getElementById("quickReportBody").innerHTML = htmlDoc;
+  document.getElementById("quickReportModal").classList.add("open");
+}
+
+function closeQuickReportModal() {
+  document.getElementById("quickReportModal").classList.remove("open");
+}
+
+function downloadFullReportPDF() {
+  syncReportNotesForPrint();
+  const prevTitle = document.title;
+  document.title = currentQuickReportFilename || "Informe_Completo_AF5";
+  document.body.classList.add("printing-quick-report");
+  window.print();
+  setTimeout(() => {
+    document.body.classList.remove("printing-quick-report");
+    document.title = prevTitle;
+  }, 600);
+}
+
+function downloadFullReportHTML() {
+  syncReportNotesForPrint();
+  const paper = document.getElementById("quickReportBody");
+  if (!paper) return;
+  const styleBlocks = Array.from(document.querySelectorAll("style")).map(s => s.outerHTML).join("\n");
+  const standaloneHtml = `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(currentQuickReportFilename)}</title>
+${styleBlocks}
+<style>
+  body { background: #eef0f6; padding: 24px 14px; }
+  .no-print, .rpt-notes-edit { display: none !important; }
+  .rpt-notes-print.has-content { display: block !important; }
+  .rpt-notes-section.empty-notes { display: none !important; }
+  @media print { body { background: #fff; padding: 0; } .report-paper { box-shadow: none; border: none; } }
+</style>
+</head>
+<body>
+  <div class="report-paper">${paper.innerHTML}</div>
+</body>
+</html>`;
+  const blob = new Blob(["\uFEFF" + standaloneHtml], { type: "text/html;charset=utf-8;" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${currentQuickReportFilename || "Informe_Completo_AF5"}.html`;
+  a.click();
+  showToast(`Documento ${a.download} descargado.`);
+}
+
+async function copyQuickReport() {
+  const txt = currentQuickReportPlainText || (document.getElementById("quickReportBody").innerText || "");
+  if (!txt) return;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(txt);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = txt;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    showToast("✓ Síntesis del informe copiada al portapapeles.");
+  } catch (e) {
+    showToast("No se pudo copiar automáticamente.");
+  }
+}
+
+// 4. LIMPIEZA SELECTIVA POR CURSO O ESTUDIANTE
+let activeCleanTab = "course";
+
+function openSelectiveCleanModal() {
+  switchCleanTab("course");
+  populateCleanCourseSelect();
+  populateCleanStudentSelect();
+  updateSelectiveCleanPreview();
+  document.getElementById("selectiveCleanModal").classList.add("open");
+}
+
+function closeSelectiveCleanModal() {
+  document.getElementById("selectiveCleanModal").classList.remove("open");
+}
+
+function switchCleanTab(tab) {
+  activeCleanTab = tab;
+  document.getElementById("cleanPanel_course").style.display = tab === "course" ? "block" : "none";
+  document.getElementById("cleanPanel_student").style.display = tab === "student" ? "block" : "none";
+  document.getElementById("cleanTabBtn_course").classList.toggle("active", tab === "course");
+  document.getElementById("cleanTabBtn_student").classList.toggle("active", tab === "student");
+  updateSelectiveCleanPreview();
+}
+
+function populateCleanCourseSelect() {
+  const sel = document.getElementById("cleanCourseSelect");
+  if (!sel) return;
+  sel.innerHTML = "";
+
+  const courseSet = new Set();
+  courseProfiles.forEach(c => { if (c.name) courseSet.add(c.name.trim()); });
+  students.forEach(s => { if (s.group && s.group.trim()) courseSet.add(s.group.trim()); });
+  masterRoster.forEach(r => { if (r.group && r.group.trim()) courseSet.add(r.group.trim()); });
+
+  const sorted = Array.from(courseSet).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  const hasUngrouped = students.some(s => !(s.group || "").trim());
+
+  if (sorted.length === 0 && !hasUngrouped) {
+    sel.innerHTML = `<option value="">(No hay cursos con registros)</option>`;
+    return;
+  }
+
+  sorted.forEach(name => {
+    const cnt = students.filter(s => (s.group || "").trim().toLowerCase() === name.toLowerCase()).length;
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = `${name} (${cnt} estudiante${cnt === 1 ? "" : "s"})`;
+    sel.appendChild(opt);
+  });
+
+  if (hasUngrouped) {
+    const cnt = students.filter(s => !(s.group || "").trim()).length;
+    const opt = document.createElement("option");
+    opt.value = "__UNGROUPED__";
+    opt.textContent = `(Sin curso asignado) (${cnt} estudiante${cnt === 1 ? "" : "s"})`;
+    sel.appendChild(opt);
+  }
+}
+
+function populateCleanStudentSelect() {
+  const sel = document.getElementById("cleanStudentSelect");
+  const q = (document.getElementById("cleanStudentSearch") ? document.getElementById("cleanStudentSearch").value : "").toLowerCase().trim();
+  if (!sel) return;
+  sel.innerHTML = "";
+
+  const list = students.filter(s => {
+    if (!q) return true;
+    return s.name.toLowerCase().includes(q) || (s.group || "").toLowerCase().includes(q) || String(s.listNum || "").includes(q);
+  });
+
+  if (list.length === 0) {
+    sel.innerHTML = `<option value="">(No hay estudiantes que coincidan)</option>`;
+    updateSelectiveCleanPreview();
+    return;
+  }
+
+  list.forEach(s => {
+    const status = (s.pre && s.post) ? "Pre + Post" : (s.pre ? "Solo Pre" : "Solo Post");
+    const opt = document.createElement("option");
+    opt.value = s.id;
+    opt.textContent = `${s.listNum ? "[N° " + s.listNum + "] " : ""}${s.name} — ${s.group || "Sin curso"} (${status})`;
+    sel.appendChild(opt);
+  });
+  updateSelectiveCleanPreview();
+}
+
+function updateSelectiveCleanPreview() {
+  if (activeCleanTab === "course") {
+    const box = document.getElementById("cleanCoursePreview");
+    const courseVal = document.getElementById("cleanCourseSelect").value;
+    const scope = document.getElementById("cleanCourseScope").value;
+    const incRoster = document.getElementById("cleanCourseIncludeRoster").checked;
+
+    if (!courseVal) {
+      box.className = "clean-preview-box safe";
+      box.textContent = "No hay cursos disponibles para limpiar.";
+      return;
+    }
+
+    const matchCourse = (grp) => {
+      const clean = (grp || "").trim();
+      return courseVal === "__UNGROUPED__" ? clean === "" : clean.toLowerCase() === courseVal.toLowerCase();
+    };
+
+    const inCourse = students.filter(s => matchCourse(s.group));
+    const nPre = inCourse.filter(s => s.pre).length;
+    const nPost = inCourse.filter(s => s.post).length;
+    const nRoster = incRoster ? masterRoster.filter(r => matchCourse(r.group)).length : 0;
+    const others = students.length - inCourse.length;
+
+    let msg = "";
+    if (scope === "pre") msg = `Se borrarán ${nPre} registros de Pre-Test del curso seleccionado.`;
+    else if (scope === "post") msg = `Se borrarán ${nPost} registros de Post-Test del curso seleccionado.`;
+    else msg = `Se eliminarán ${inCourse.length} estudiantes completos (Pre: ${nPre}, Post: ${nPost}) del curso seleccionado.`;
+
+    if (incRoster) msg += ` También se quitarán ${nRoster} registros de la Nómina Maestra.`;
+    msg += ` Los ${others} estudiantes de los demás cursos permanecerán intactos.`;
+
+    box.className = (inCourse.length > 0 || nRoster > 0) ? "clean-preview-box" : "clean-preview-box safe";
+    box.textContent = msg;
+  } else {
+    const box = document.getElementById("cleanStudentPreview");
+    const stId = document.getElementById("cleanStudentSelect").value;
+    const scope = document.getElementById("cleanStudentScope").value;
+    const incRoster = document.getElementById("cleanStudentIncludeRoster").checked;
+
+    const st = students.find(s => s.id === stId);
+    if (!st) {
+      box.className = "clean-preview-box safe";
+      box.textContent = "No hay un estudiante seleccionado.";
+      return;
+    }
+
+    let actionTxt = "";
+    if (scope === "pre") actionTxt = st.pre ? `Se borrará solo el Pre-Test de "${st.name}".` : `"${st.name}" no tiene Pre-Test registrado.`;
+    else if (scope === "post") actionTxt = st.post ? `Se borrará solo el Post-Test de "${st.name}".` : `"${st.name}" no tiene Post-Test registrado.`;
+    else actionTxt = `Se eliminará completamente a "${st.name}" (Pre y Post) de la planilla.`;
+
+    if (incRoster && st.listNum) actionTxt += ` También se quitará N° ${st.listNum} de la Nómina Maestra.`;
+    actionTxt += ` El resto de los estudiantes (${students.length - 1}) no se verán afectados.`;
+
+    box.className = "clean-preview-box";
+    box.textContent = actionTxt;
+  }
+}
+
+function executeCleanByCourse() {
+  const courseVal = document.getElementById("cleanCourseSelect").value;
+  const scope = document.getElementById("cleanCourseScope").value;
+  const incRoster = document.getElementById("cleanCourseIncludeRoster").checked;
+  if (!courseVal) { showToast("Selecciona un curso primero."); return; }
+
+  const label = courseVal === "__UNGROUPED__" ? "(Sin curso asignado)" : courseVal;
+  const matchCourse = (grp) => {
+    const clean = (grp || "").trim();
+    return courseVal === "__UNGROUPED__" ? clean === "" : clean.toLowerCase() === courseVal.toLowerCase();
+  };
+
+  const targets = students.filter(s => matchCourse(s.group));
+  const rosterTargets = incRoster ? masterRoster.filter(r => matchCourse(r.group)) : [];
+  if (targets.length === 0 && rosterTargets.length === 0) {
+    showToast("No hay registros que eliminar en ese curso.");
+    return;
+  }
+
+  const scopeDesc = scope === "pre" ? "solo Pre-Test" : (scope === "post" ? "solo Post-Test" : "Pre-Test y Post-Test");
+  if (!confirm(`¿Confirmas limpiar "${label}" (${scopeDesc})?\n\nEsta acción afectará únicamente a este curso y mantendrá intactos todos los demás.`)) return;
+
+  if (scope === "pre") {
+    targets.forEach(s => { s.pre = null; });
+    students = students.filter(s => s.pre || s.post);
+  } else if (scope === "post") {
+    targets.forEach(s => { s.post = null; });
+    students = students.filter(s => s.pre || s.post);
+  } else {
+    students = students.filter(s => !matchCourse(s.group));
+  }
+
+  if (incRoster) {
+    masterRoster = masterRoster.filter(r => !matchCourse(r.group));
+    saveMasterRoster();
+  }
+
+  saveToStorage();
+  refreshAllViews();
+  populateCleanCourseSelect();
+  populateCleanStudentSelect();
+  updateSelectiveCleanPreview();
+  showToast(`✓ Limpieza selectiva aplicada en "${label}".`);
+}
+
+function executeCleanByStudent() {
+  const stId = document.getElementById("cleanStudentSelect").value;
+  const scope = document.getElementById("cleanStudentScope").value;
+  const incRoster = document.getElementById("cleanStudentIncludeRoster").checked;
+  const st = students.find(s => s.id === stId);
+  if (!st) { showToast("Selecciona un estudiante válido."); return; }
+
+  const scopeDesc = scope === "pre" ? "solo su Pre-Test" : (scope === "post" ? "solo su Post-Test" : "todos sus registros (Pre y Post)");
+  if (!confirm(`¿Confirmas eliminar ${scopeDesc} de "${st.name}"?`)) return;
+
+  if (scope === "pre") {
+    st.pre = null;
+    if (!st.pre && !st.post) students = students.filter(x => x.id !== stId);
+  } else if (scope === "post") {
+    st.post = null;
+    if (!st.pre && !st.post) students = students.filter(x => x.id !== stId);
+  } else {
+    students = students.filter(x => x.id !== stId);
+  }
+
+  if (incRoster && st.listNum) {
+    masterRoster = masterRoster.filter(r => r.listNum !== st.listNum);
+    saveMasterRoster();
+  }
+
+  saveToStorage();
+  refreshAllViews();
+  populateCleanCourseSelect();
+  populateCleanStudentSelect();
+  updateSelectiveCleanPreview();
+  showToast(`✓ Registro eliminado para "${st.name}".`);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  detectAndRenderUIOrigin();
+  window.addEventListener("online", detectAndRenderUIOrigin);
+  window.addEventListener("offline", detectAndRenderUIOrigin);
+});
 
 window.addEventListener("DOMContentLoaded", init);
 </script>
